@@ -13,7 +13,7 @@ public class FirstTwentyPrime {
 
       while (count < numbers) {
           boolean check = true;
-          for (int i = 2;i < Math.sqrt(N); i++) {
+          for (int i = 2;i <= Math.sqrt(N); i++) {
               if (N % i == 0) {
                   check = false;
               }
