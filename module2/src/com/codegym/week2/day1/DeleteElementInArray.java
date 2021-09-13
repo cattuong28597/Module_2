@@ -22,8 +22,9 @@ public class DeleteElementInArray {
         }
         System.out.println("Property list: ");
         for (int j = 0; j < array.length; j++) {
-            System.out.println(array[j] + "\t");
+            System.out.print(array[j] + "\t");
         }
+        System.out.print("\n");
         int X = 3;
         int index = -1;
         for (int a = 0; a < array.length; a++) {
@@ -38,9 +39,9 @@ public class DeleteElementInArray {
             }
             array[array.length-1] = 0;
         }
-        System.out.println("New array: ");
+        System.out.print("New array: \n");
         for (int c = 0; c < array.length-1; c++) {
-            System.out.println(array[c] +"  ");
+            System.out.print(array[c] +"  ");
         }
     }
 }
