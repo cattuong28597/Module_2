@@ -11,14 +11,14 @@ public class main {
         double b = scanner.nextDouble();
         System.out.print("Enter c: ");
         double c = scanner.nextDouble();
-        System.out.println(a+ "x2+"+b+"x+"+ c+ "=0" );
+        System.out.println(a + "x2+" + b + "x+" + c + "=0");
         Equation quadraticEquation = new Equation(a, b, c);
         if (quadraticEquation.getDiscriminant() < 0) {
             System.out.print("The equation has no roots");
         } else if (quadraticEquation.getDiscriminant() == 0) {
-            System.out.print("The equation has one root is "+quadraticEquation.getRoot1());
+            System.out.print("The equation has one root is " + quadraticEquation.getRoot1());
         } else if (quadraticEquation.getDiscriminant() > 0) {
-            System.out.print("The equation has two roots \n r1: "+quadraticEquation.getRoot1()+"\n r2: "+quadraticEquation.getRoot2());
+            System.out.print("The equation has two roots \n r1: " + quadraticEquation.getRoot1() + "\n r2: " + quadraticEquation.getRoot2());
         }
     }
 }
