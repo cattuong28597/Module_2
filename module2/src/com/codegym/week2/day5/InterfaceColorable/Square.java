@@ -38,7 +38,8 @@ public class Square extends Shape implements Colorable {
         return "A Square with side=" + getSide() + super.toString() + ", Area=" + getArea();
     }
     @Override
-    public String howToColor() {
-        return "Color all four sides";
+    public void howToColor() {
+          System.out.println("Color all four sides");
+
     }
 }

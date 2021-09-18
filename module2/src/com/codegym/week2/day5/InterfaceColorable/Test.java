@@ -10,7 +10,7 @@ public class Test {
 
         if (a instanceof Square) {
             Colorable b = (Square) a;
-            System.out.println(b.howToColor());
+            b.howToColor();
         }
         }
     }

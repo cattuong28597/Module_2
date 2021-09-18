@@ -1,6 +1,7 @@
 package com.codegym.week3.day1.Refactoring_method;
 
-public class Cylinder {
+public class
+Cylinder {
     public static double getVolume(int radius, int height) {
         double baseArea = getBaseArea(radius);
         double perimeter = getPerimeter(radius);

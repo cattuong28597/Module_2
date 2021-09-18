@@ -11,7 +11,7 @@ public class DrawingTheGeometry {
             System.out.println("Menu");
             System.out.println("1.Draw the rectangle");
             System.out.println("2.Draw the square triangle");
-            System.out.println("a.Draw the square triangle has botton-left angles");
+            System.out.println("a.Draw the square triangle has button-left angles");
             System.out.println("b.Draw the square triangle has top-left angles");
             System.out.println("3.Draw the isosceles triangle");
             System.out.println("4.Exit");
@@ -30,7 +30,7 @@ public class DrawingTheGeometry {
                     break;
                 case 2:
                     while (choice1 != "") {
-                        System.out.println("a.Draw the square triangle has botton-left angles");
+                        System.out.println("a.Draw the square triangle has button-left angles");
                         System.out.println("b.Draw the square triangle has top-left angles");
                         System.out.println("c. Exit");
                         System.out.println("Enter your choice");
@@ -39,7 +39,7 @@ public class DrawingTheGeometry {
 
                         switch (choice1) {
                             case "a":
-                                System.out.println("Draw the square triangle has botton-left angles");
+                                System.out.println("Draw the square triangle has button-left angles");
                                 for (int i = 1; i <= 7;i++) {
                                     for (int j = 1; j < i; j++) {
                                         System.out.print(" * ");
