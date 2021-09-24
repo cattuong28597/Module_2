@@ -1,4 +1,4 @@
-package com.codegym.week3.day4.QueueLinkedList;
+package com.codegym.week3.day4.StackLinkedList;
 
 import java.util.EmptyStackException;
 import java.util.LinkedList;
