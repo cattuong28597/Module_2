@@ -6,6 +6,7 @@ public class MyLinkedList {
     private int numNodes;
 
     public MyLinkedList(Object data) {
+
         head = new Node(data);
     }
 
@@ -16,6 +17,7 @@ public class MyLinkedList {
         public Node(Object data) {
             this.data = data;
         }
+
         public Object getData() {
             return this.data;
         }

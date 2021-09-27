@@ -17,8 +17,15 @@ public class Test {
             System.out.println(animal.makeSound());
 
             if (animal instanceof Chicken) {
-                edible edibler = (Chicken) animal;
-                System.out.println(edibler.howToEat());
+//                edible edibler = (Chicken) animal;
+//                System.out.println(edibler.howToEat());
+                edible edibleObj = new edible() {
+                    @Override
+                    public String howToEat() {
+                        return "can eat";
+                    }
+                };
+                System.out.println(edibleObj.howToEat());
             }
         }
 

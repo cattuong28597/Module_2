@@ -4,22 +4,22 @@ import java.util.Scanner;
 import java.text.DecimalFormat;
 
 public class ATM {
-    private int account = 1200000;
+    private long account = 1200000;
     String[] history = new String[3];
     Scanner input = new Scanner(System.in);
 
     public ATM() {
     }
 
-    public ATM(int account) {
+    public ATM(long account) {
         this.account = account;
     }
 
-    public int getAccount() {
+    public long getAccount() {
         return account;
     }
 
-    public void setAccount(int account) {
+    public void setAccount(long account) {
         this.account = account;
     }
 
@@ -38,35 +38,47 @@ public class ATM {
         DecimalFormat formatter = new DecimalFormat("###,###,###");
         System.out.println("Giao dich Nap tien");
         System.out.print("Vui long nhap so tien ");
-        int addMoney = input.nextInt();
-        account = account + addMoney;
-        System.out.println("Giao dich thanh cong. Ban vua nap " + formatter.format(addMoney) + " vnd thanh cong.");
+        String addMoney = input.nextLine();
+        while(addMoney.matches("[0-9]+") == false || addMoney.length()<4 || (addMoney.length()>=4 && Long.valueOf(addMoney)%1000!=0)){
+            System.out.println("Xin ban vui long nhap lai so tien hop le");
+            System.out.print("Vui long nhap so tien ");
+            addMoney = input.nextLine();
+        }
+        long money = Long.valueOf(addMoney);
+        account = account + money;
+        System.out.println("Giao dich thanh cong. Ban vua nap " + formatter.format(money) + " vnd thanh cong.");
         System.out.println("So du tai khoan cua khach hang la: " + formatter.format(account) + " vnd");
         System.out.println("Bam nut theo menu de tiep tuc giao dich");
         System.out.println("=================================================");
         for (int i = 0; i < 2; i++) {
             this.history[i] = this.history[i + 1];
         }
-        this.history[2] = ("Nap tien " + formatter.format(addMoney) + " vnd");
+        this.history[2] = ("Nap tien " + formatter.format(money) + " vnd");
     }
 
     public void withdrawalMoney() {
         DecimalFormat formatter = new DecimalFormat("###,###,###");
-        int subtractMoney;
+        String subtractMoney;
         System.out.println("Giao dich Rut tien");
         System.out.print("Vui long nhap so tien ");
-        subtractMoney = input.nextInt();
-        if (subtractMoney <= account) {
-            account -= subtractMoney;
+        subtractMoney = input.nextLine();
+        while (subtractMoney.matches("[0-9]+") == false || subtractMoney.length() < 4 || Long.valueOf(subtractMoney) % 1000 != 0) {
+            System.out.println("So tien khong hop le");
+            System.out.print("Vui long nhap lai so tien: ");
+            subtractMoney = input.nextLine();
+        }
+        long smoney = Long.valueOf(subtractMoney);
+        if (smoney <= account) {
+            account -= smoney;
             System.out.println("Giao dich thanh cong.");
-            System.out.println("Ban vua rut " + formatter.format(subtractMoney) + " vnd thanh cong.");
+            System.out.println("Ban vua rut " + formatter.format(smoney) + " vnd thanh cong.");
             System.out.println("So du tai khoan khach hang la: " + formatter.format(account) + " vnd");
             System.out.println("Bam nut theo menu de tiep tuc giao dich");
             System.out.println("=================================================");
             for (int i = 0; i < 2; i++) {
                 this.history[i] = this.history[i + 1];
             }
-            this.history[2] = ("Rut tien " + formatter.format(subtractMoney) + " vnd");
+            this.history[2] = ("Rut tien " + formatter.format(smoney) + " vnd");
         } else {
             System.out.println("Giao dich khong thanh cong");
             System.out.println("So du tai khoan khach hang la: " + formatter.format(account) + " vnd");
