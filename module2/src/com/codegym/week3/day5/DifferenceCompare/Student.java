@@ -1,16 +1,12 @@
-package com.codegym.week3.day5.DifferenceHashMap;
+package com.codegym.week3.day5.DifferenceCompare;
 
-public class Student {
+public class Student implements Comparable<Student>{
+
     private String name;
-    private int age;
+    private Integer age;
     private String address;
 
-    public Student() {
-
-    }
-
-    public Student(String name,int age, String address) {
-        super();
+    public Student(String name, int age, String address) {
         this.name = name;
         this.age = age;
         this.address = address;
@@ -24,11 +20,11 @@ public class Student {
         this.name = name;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -42,10 +38,15 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", address='" + address + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Student student) {
+        return this.getName().compareTo(student.getName());
     }
 }
