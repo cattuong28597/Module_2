@@ -13,11 +13,12 @@ public class main {
         list.addFirst("DakLak");
         list.addFirst("Ha Noi");
         list.addLast("Quang Nam");
+
         list.printList();
-        System.out.println("===============");
-        list.getFirst();
-        list.getLast();
-        list.getIndex(3);
+//        System.out.println("===============");
+//        list.getFirst();
+//        list.getLast();
+//        list.getIndex(3);
 //        list.printList();
     }
 }
