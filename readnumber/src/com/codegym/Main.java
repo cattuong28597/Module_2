@@ -3,7 +3,7 @@ package com.codegym;
 import java.util.Scanner;
 
 public class Main {
-    public static  String readOneToNine (int a) {
+    public static String readOneToNine(int a) {
         String str = "";
         switch (a) {
             case 1:
@@ -36,7 +36,8 @@ public class Main {
         }
         return str;
     }
-    public static String readTenToNineteen (int b) {
+
+    public static String readTenToNineteen(int b) {
         String str = "";
         switch (b) {
             case 0:
@@ -54,17 +55,20 @@ public class Main {
             case 5:
                 str = "fifteen";
                 break;
+            case 8:
+                str = "eighteen";
+                break;
             case 4:
             case 6:
             case 7:
-            case 8:
             case 9:
                 str = readOneToNine(b) + "teen";
                 break;
         }
         return str;
     }
-    public static String readTwentyToNinety (int c) {
+
+    public static String readTwentyToNinety(int c) {
         String str = "";
         switch (c) {
             case 2:
@@ -76,16 +80,19 @@ public class Main {
             case 5:
                 str = "fifty";
                 break;
+            case 8:
+                str = "eighty";
+                break;
             case 4:
             case 6:
             case 7:
-            case 8:
             case 9:
                 str = readOneToNine(c) + "ty";
                 break;
         }
         return str;
     }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the number: ");

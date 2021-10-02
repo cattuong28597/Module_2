@@ -14,7 +14,7 @@ public class CheckSym {
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == '(') {
                 stack.push(str.charAt(i));
-                
+
             } else if (str.charAt(i) == ')') {
                 if (stack.size() == 0) {
                     isTrue = false;
