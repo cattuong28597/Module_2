@@ -13,5 +13,7 @@ public class Class {
         Pattern pattern = Pattern.compile(CLASS_REGEX);
         Matcher matcher = pattern.matcher(regex);
         return matcher.matches();
+
+//        return Pattern.compile(CLASS_REGEX).matcher(regex).matches();
     }
 }
