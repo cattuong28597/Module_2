@@ -62,7 +62,7 @@ public class ATM {
         System.out.println("Giao dich Rut tien");
         System.out.print("Vui long nhap so tien ");
         subtractMoney = input.nextLine();
-        while (subtractMoney.matches("[0-9]+.[0-9][0-9][0-9]") == false || subtractMoney.length() < 4 || Long.valueOf(subtractMoney) % 1000 != 0) {
+        while (subtractMoney.matches("[0-9]+") == false || subtractMoney.length() < 4 || Long.valueOf(subtractMoney) % 1000 != 0) {
             System.out.println("So tien khong hop le");
             System.out.print("Vui long nhap lai so tien: ");
             subtractMoney = input.nextLine();

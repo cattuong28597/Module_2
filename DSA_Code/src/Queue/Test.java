@@ -26,5 +26,6 @@ public class Test {
         linkedListQueue.dequeue();
         linkedListQueue.dequeue();
         linkedListQueue.print();
+       
     }
 }

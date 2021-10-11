@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DSA_Code/DSA_Code.iml" filepath="$PROJECT_DIR$/DSA_Code/DSA_Code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex1/Ex1.iml" filepath="$PROJECT_DIR$/Ex1/Ex1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hello/Hello.iml" filepath="$PROJECT_DIR$/Hello/Hello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Module_2.iml" filepath="$PROJECT_DIR$/.idea/Module_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bmi-calculator/bmi-calculator.iml" filepath="$PROJECT_DIR$/bmi-calculator/bmi-calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/changevalue/changevalue.iml" filepath="$PROJECT_DIR$/changevalue/changevalue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day-of-month/day-of-month.iml" filepath="$PROJECT_DIR$/day-of-month/day-of-month.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leap-year-calculator/leap-year-calculator.iml" filepath="$PROJECT_DIR$/leap-year-calculator/leap-year-calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/linear-equation-resolver/linear-equation-resolver.iml" filepath="$PROJECT_DIR$/linear-equation-resolver/linear-equation-resolver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module2/module2.iml" filepath="$PROJECT_DIR$/module2/module2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/operator-expression/operator-expression.iml" filepath="$PROJECT_DIR$/operator-expression/operator-expression.iml" />
+      <module fileurl="file://$PROJECT_DIR$/readnumber/readnumber.iml" filepath="$PROJECT_DIR$/readnumber/readnumber.iml" />
+      <module fileurl="file://$PROJECT_DIR$/variable-dataType/variable-dataType.iml" filepath="$PROJECT_DIR$/variable-dataType/variable-dataType.iml" />
+    </modules>
+  </component>
+</project>

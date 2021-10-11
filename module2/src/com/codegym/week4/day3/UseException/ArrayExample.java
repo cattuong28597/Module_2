@@ -24,7 +24,7 @@ public class ArrayExample {
         int x = scanner.nextInt();
         try {
             System.out.println("Gia tri cua phan tu co chi so  " + x+ " la "+arr[x]);
-        } catch (IndexOutOfBoundsException e) {
+        } catch (ArrayIndexOutOfBoundsException e) {
             System.err.println("Chi so vuot qua gioi han cua mang");
         }
     }

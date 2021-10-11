@@ -15,12 +15,18 @@ public class IllegalTriangleException extends Throwable {
         double thirdSide = scanner.nextDouble();
 
         try {
-            if (firstSide <= 0 || secondSide <= 0 || thirdSide <= 0|| firstSide+secondSide < thirdSide|| secondSide+thirdSide<firstSide|| firstSide+thirdSide<secondSide) {
+            if (firstSide <= 0 || secondSide <= 0 || thirdSide <= 0
+                    || firstSide + secondSide <= thirdSide
+                    || secondSide + thirdSide <= firstSide
+                    || firstSide + thirdSide <= secondSide) {
                 throw new IllegalTriangleException();
             }
             System.out.println("This is a triangle");
-        } catch (IllegalTriangleException e){
+        } catch (IllegalTriangleException e) {
             System.out.println("This is not a triangle");
+//            System.out.println(e);
+        } finally {
+            System.out.println("ABC");
         }
 
 //        if (firstSide <= 0 || secondSide <= 0 || thirdSide <= 0|| firstSide+secondSide < thirdSide|| secondSide+thirdSide<firstSide|| firstSide+thirdSide<secondSide) {

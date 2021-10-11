@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3d82c5d7-aec4-4c3f-8b7f-7787f42b8fcc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../DSA_Code/src/Queue/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../DSA_Code/src/Queue/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/module2/com/codegym/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/module2/com/codegym/OOPATM/ATM.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/module2/com/codegym/OOPATM/ATM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/module2/com/codegym/week4/day3/UseException/ArrayExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/module2/com/codegym/week4/day3/UseException/ArrayExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/module2/com/codegym/week4/day3/UseException/CalculationExample.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/module2/com/codegym/week4/day3/UseException/CalculationExample.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/module2/com/codegym/week4/day3/UseException/IllegalTriangleException.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/production/module2/com/codegym/week4/day3/UseException/IllegalTriangleException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/codegym/OOPATM/ATM.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/codegym/OOPATM/ATM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/codegym/week4/TriangleShape/Equation.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/codegym/week4/TriangleShape/Equation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/codegym/week4/TriangleShape/Fibonacci.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/codegym/week4/TriangleShape/Fibonacci.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/codegym/week4/TriangleShape/Population.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/codegym/week4/TriangleShape/Population.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/codegym/week4/TriangleShape/QuadraticEquation.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/codegym/week4/TriangleShape/QuadraticEquation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/codegym/week4/TriangleShape/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/codegym/week4/TriangleShape/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/codegym/week4/day3/UseException/ArrayExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/codegym/week4/day3/UseException/ArrayExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/codegym/week4/day3/UseException/CalculationExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/codegym/week4/day3/UseException/CalculationExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/codegym/week4/day3/UseException/IllegalTriangleException.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/codegym/week4/day3/UseException/IllegalTriangleException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/codegym/week4/day3/UseException/MultipleCatchBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/codegym/week4/day3/UseException/MultipleCatchBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/codegym/week4/day4/CopyFileCSV/ReadCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/codegym/week4/day4/CopyFileCSV/ReadCSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/codegym/week4/day5/Check/FileInJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/codegym/week4/day5/Check/FileInJava.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1z7FaHtMgAiEQQ8Mj7CTq4kJGNJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d82c5d7-aec4-4c3f-8b7f-7787f42b8fcc" name="Changes" comment="" />
+      <created>1633491280561</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1633491280561</updated>
+      <workItem from="1633491281748" duration="79000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

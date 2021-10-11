@@ -18,5 +18,6 @@ public class Main {
         } catch (Exception e) {
             System.out.println("It is over!");
         }
+        System.out.println("Main thread stopped!");
     }
 }
