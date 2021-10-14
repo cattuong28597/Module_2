@@ -3,10 +3,11 @@ package writeReadFile;
 import model.Book;
 import model.CustomerInformation;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadWriteCSVFile {
+public class ReadWriteCSVFile implements Serializable {
 
 
     public List<String> parseCsvLine(String csvLine) {
@@ -33,7 +34,7 @@ public class ReadWriteCSVFile {
                         ", số điện thoại:'" + customer.getNumber()+ '\'' +
                         ", tên sách:'" + book.getName()+ '\'' +
                         ", tác giả:'" + book.getAuthor()+ '\'' +
-                        ", giá tiền:" + book.getPrice()
+                        ", giá tiền: " + book.getPrice() + ", ngày mua: " +customer.getDate()
                 );
     }
 

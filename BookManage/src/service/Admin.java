@@ -1,6 +1,7 @@
 package service;
 import model.Book;
 import model.CustomerInformation;
+import repository.BookRepository;
 import writeReadFile.ReadWriteCSVFile;
 
 import java.io.*;
@@ -10,10 +11,11 @@ import java.util.Scanner;
 
 public class Admin {
     private ReadWriteCSVFile readWriteCSVFile = new ReadWriteCSVFile();
-    public void checkAdmin(){
+    BookRepository bookRepository=new BookRepository();
+    public void checkAdmin() throws IOException {
         System.out.println("=================================================");
         Scanner input = new Scanner(System.in);
-        System.out.println("Mời bạn nhập mã để truy cập quyên admin : ");
+        System.out.println("Mời bạn nhập mã để truy cập quyền admin : ");
         String inputPass = input.nextLine();
         while(!inputPass.equals("admin")){
             System.out.println("Thông tin mã nhập sai, vui lòng nhập lại : ");
@@ -22,19 +24,19 @@ public class Admin {
         adminMenu();
     }
 
-    public void adminMenu(){
+    public void adminMenu() throws IOException {
         Menu menu = new Menu();
         String choice = "a";
         Scanner input = new Scanner(System.in);
         do {
-            System.out.println("Menu:");
-            System.out.println("   1. Nhấn 1 để xem thông tin người mượn");
-            System.out.println("   2. Nhấn 2 để xem kho sách");
-            System.out.println("   3. Nhấn 3 để tìm sách");
-            System.out.println("   4. Nhấn 4 để thêm sách");
-            System.out.println("   5. Nhấn 5 để sửa thông tin sách");
-            System.out.println("   6. Nhấn 6 để xóa sách");
-            System.out.println("   7. Nhấn 7 để trở về Menu chính");
+            System.out.println("====================Menu:========================");
+            System.out.println("   1. Nhấn 1 để xem thông tin bán sách           ");
+            System.out.println("   2. Nhấn 2 để xem kho sách                     ");
+            System.out.println("   3. Nhấn 3 để tìm sách                         ");
+            System.out.println("   4. Nhấn 4 để thêm sách                        ");
+            System.out.println("   5. Nhấn 5 để sửa thông tin sách               ");
+            System.out.println("   6. Nhấn 6 để xóa sách                         ");
+            System.out.println("   7. Nhấn 7 để trở về Menu chính                ");
             System.out.println("=================================================");
             System.out.print("Nhập lựa chọn của bạn: ");
             choice = input.nextLine();
@@ -65,18 +67,18 @@ public class Admin {
                     System.out.println("Bấm nút theo menu để tiêp tục");
                     System.out.println("=================================================");
             }
-        } while ((choice != "2"));
+        } while ((choice != "7"));
     }
     public void readBorrowInformation() {
         BufferedReader br = null;
         try {
             String line;
-            br = new BufferedReader(new FileReader("src\\data\\ThongTinMuonSach.csv"));
+            br = new BufferedReader(new FileReader("src/data/SaleInformation.csv"));
             int count = 1;
             while ((line = br.readLine()) != null) {
                 List<String> bookLine = readWriteCSVFile.parseCsvLine(line);
-                Book book = new Book(bookLine.get(3),bookLine.get(4),Long.valueOf(bookLine.get(5)));
-                CustomerInformation customerInfo = new CustomerInformation(bookLine.get(0),bookLine.get(1),bookLine.get(2));
+                Book book = new Book(bookLine.get(3),bookLine.get(4),Long.valueOf(bookLine.get(5)), Integer.valueOf(bookLine.get(6)));
+                CustomerInformation customerInfo = new CustomerInformation(bookLine.get(0),bookLine.get(1),bookLine.get(2), bookLine.get(7));
                 readWriteCSVFile.PrintCustomerAndBook(book,customerInfo,count);
                 count ++;
             }
@@ -93,74 +95,32 @@ public class Admin {
         }
     }
 
-    public void readBooks() {
-        BufferedReader br = null;
-        try {
-            String line;
-            br = new BufferedReader(new FileReader("src\\data\\Books.csv"));
-            int count = 1;
-            while ((line = br.readLine()) != null) {
-                readWriteCSVFile.PrintBook(readWriteCSVFile.parseCsvLine(line),count);
-                count++;
-            }
-            System.out.println("=================================================");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (br != null) {
-                    br.close();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+    public void readBooks() throws IOException {
+        List<Book> books = bookRepository.getBooks();
+
+        for (int i = 0; i < books.size(); i++) {
+            Book book = books.get(i);
+            System.out.println(  i+1 + ". Tên sách:'" + book.getName() + '\'' +
+                    ", tác giả:'" + book.getAuthor() + '\'' +
+                    ", giá sách:" + book.getPrice());
         }
+
     }
 
-    public void addBook() {
+    public void addBook() throws IOException {
         System.out.println("=================================================");
         Scanner input = new Scanner(System.in);
-        System.out.println("Mời bạn nhập tên sách : ");
-        String inputBookName = input.nextLine();
-        System.out.println("Mời bạn nhập tên tác giả : ");
-        String inputAuthor = input.nextLine();
-        System.out.println("Mời bạn nhập giá tiền : ");
-        String inputPrice = input.nextLine();
-        String fileName = "src/data/Books.csv";
-        Book book = new Book(inputBookName,inputAuthor,Long.valueOf(inputPrice));
-        try{
-            BufferedReader br = new BufferedReader(new FileReader(fileName));
-            FileWriter writer = new FileWriter(fileName,true);
-            BufferedWriter bufferedWriter = new BufferedWriter(writer);
-            if(br.readLine()==null){
-                bufferedWriter.write(book.getName());
-                bufferedWriter.write(";");
-                bufferedWriter.write(book.getAuthor());
-                bufferedWriter.write(";");
-                String price = String.valueOf(book.getPrice());
-                bufferedWriter.write(price);
-                bufferedWriter.write(";");
-                System.out.println("=================================================");
-                System.out.println("Thêm sách thành công");
-                System.out.println("=================================================");
-            }
-            else{
-                bufferedWriter.write("\n");
-                bufferedWriter.write(book.getName());
-                bufferedWriter.write(";");
-                bufferedWriter.write(book.getAuthor());
-                bufferedWriter.write(";");
-                String price = String.valueOf(book.getPrice());
-                bufferedWriter.write(price);
-                bufferedWriter.write(";");
-                System.out.println("=================================================");
-                System.out.println("Thêm sách thành công");
-                System.out.println("=================================================");
-            }
-            bufferedWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        System.out.print("Mời bạn nhập tên sách : ");
+        String bookName = input.next();
+        System.out.print("Mời bạn nhập tên tác giả : ");
+        String bookAuthor = input.next();
+        System.out.print("Mời bạn nhập giá tiền : ");
+        long bookPrice = input.nextLong();
+        System.out.print("Mời bạn nhập số lượng sách: ");
+        int bookQuantity = input.nextInt();
+
+        Book book = new Book(bookName,bookAuthor,bookPrice, bookQuantity);
+        bookRepository.insert(book);
     }
 
     public void searchBooks(){
@@ -176,8 +136,8 @@ public class Admin {
             while ((line = br.readLine()) != null) {
                 List<String> csvLine = readWriteCSVFile.parseCsvLine(line);
                 if(csvLine.get(0).contains(searchCharacter)){
-                    Book book = new Book(csvLine.get(0),csvLine.get(1),Long.valueOf(csvLine.get(2)));
-                    listBook.add(book);
+                   // Book book = new Book(csvLine.get(0),csvLine.get(1),Long.valueOf(csvLine.get(2)));
+                  //2  listBook.add(book);
                 }
             }
             if(listBook.size()==0){
@@ -212,7 +172,7 @@ public class Admin {
             while ((line = br.readLine()) != null) {
                 readWriteCSVFile.PrintBook(readWriteCSVFile.parseCsvLine(line),count);
                 List<String> bookLine = readWriteCSVFile.parseCsvLine(line);
-                listBook.add(new Book(bookLine.get(0),bookLine.get(1),Long.valueOf(bookLine.get(2))));
+                listBook.add(new Book(bookLine.get(0),bookLine.get(1),Long.valueOf(bookLine.get(2)), Integer.valueOf(bookLine.get(3))));
                 count++;
             }
             System.out.println("=================================================");
@@ -253,7 +213,7 @@ public class Admin {
         }
     }
 
-    public void confirmBookChange(ArrayList<Book> books) {
+    public void confirmBookChange(ArrayList<Book> books) throws IOException {
         Menu menu = new Menu();
         String choice = "a";
         Scanner input = new Scanner(System.in);
@@ -279,7 +239,7 @@ public class Admin {
         } while (choice != "2");
     }
 
-    public void saveChangeValueBookToCSV(ArrayList<Book> books) {
+    public void saveChangeValueBookToCSV(ArrayList<Book> books) throws IOException {
         Menu menu = new Menu();
         String fileName = "src/data/Books.csv";
         try {
@@ -333,7 +293,7 @@ public class Admin {
             while ((line = br.readLine()) != null) {
                 readWriteCSVFile.PrintBook(readWriteCSVFile.parseCsvLine(line),count);
                 List<String> bookLine = readWriteCSVFile.parseCsvLine(line);
-                listBook.add(new Book(bookLine.get(0),bookLine.get(1),Long.valueOf(bookLine.get(2))));
+               // listBook.add(new Book(bookLine.get(0),bookLine.get(1),Long.valueOf(bookLine.get(2))));
                 count++;
             }
             System.out.println("=================================================");
@@ -358,7 +318,7 @@ public class Admin {
         }
     }
 
-    public void confirmBookDelete(ArrayList<Book> books) {
+    public void confirmBookDelete(ArrayList<Book> books) throws IOException {
         Menu menu = new Menu();
         String choice = "a";
         Scanner input = new Scanner(System.in);
@@ -385,7 +345,7 @@ public class Admin {
     }
 
 
-    public void saveChangeAfterDelete(ArrayList<Book> books) {
+    public void saveChangeAfterDelete(ArrayList<Book> books) throws IOException {
         Menu menu = new Menu();
         String fileName = "src/data/Books.csv";
         try {
