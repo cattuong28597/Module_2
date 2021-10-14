@@ -2,7 +2,7 @@ package com.codegym.week5.day1.RacingCars;
 
 import java.util.Random;
 
-public class Car implements Runnable{
+public class Car implements Runnable {
     private String name;
 
     public Car(String name) {
@@ -23,21 +23,21 @@ public class Car implements Runnable{
                 for (int i = 0; i < Main.DISTANCE; i += Main.STEP) {
                     if (percentTravel >= i) {
                         log += "o";
-                    } else if (percentTravel >= i && percentTravel < i+ Main.STEP) {
+                    } else if (percentTravel >= i && percentTravel < i + Main.STEP) {
                         log += "o";
                     } else {
                         log += "-";
                     }
                 }
                 log += "|";
-                System.out.println("Car"+ this.name+": "+log+" "+Math.min(Main.DISTANCE, runDistance) + "KM");
+                System.out.println("Car" + this.name + ": " + log + " " + Math.min(Main.DISTANCE, runDistance) + "KM");
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                System.out.println("Car" +this.name+ " broken...");
+                System.out.println("Car" + this.name + " broken...");
                 break;
             }
         }
         long endTime = System.currentTimeMillis();
-        System.out.println("Car" + this.name+ " Finish in "+ (endTime - startTime));
+        System.out.println("Car" + this.name + " Finish in " + (endTime - startTime));
     }
 }

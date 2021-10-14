@@ -19,7 +19,7 @@ public class AccountExample {
         Matcher matcherLast = patternLast.matcher(regex);
         Matcher matcherMid = patternMid.matcher(regex);
 
-        if (matcherFirst.matches() || matcherLast.matches() || matcherMid.matches()) {
+        if ( matcherMid.matches()) {
             isValid = true;
         }
 

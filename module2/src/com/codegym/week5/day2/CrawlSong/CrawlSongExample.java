@@ -12,14 +12,20 @@ import java.util.regex.Pattern;
 public class CrawlSongExample {
     public static void main(String[] args) {
         try {
-           URL url = new URL("https://www.nhaccuatui.com/bai-hat/nhac-tre-moi.html");
+//           URL url = new URL("https://www.nhaccuatui.com/bai-hat/nhac-tre-moi.html");
+//            URL url = new URL("https://www.nhaccuatui.com/ajax/get-top-20?type=bai-hat&genre=au-my&isHome=false");
+            URL url = new URL("https://dantri.com.vn/the-gioi.htm");
            Scanner scanner = new Scanner(new InputStreamReader(url.openStream()));
            scanner.useDelimiter("\\Z");
            String content = scanner.next();
            scanner.close();
            content = content.replaceAll("\\n+", "");
-           Pattern p = Pattern.compile("name_song\">(.*?)</a>");
+//           Pattern p = Pattern.compile("title=\"(.*?)href=");
+//            Pattern p = Pattern.compile("name_song\" title=\"(.*?)\" onclick");
+//            Pattern p = Pattern.compile("name_song\" title=\"(.*?)\" onclick");
+            Pattern p = Pattern.compile("\" title=\"(.*?)\">");
            Matcher m = p.matcher(content);
+
            while (m.find()) {
                System.out.println(m.group(1));
            }

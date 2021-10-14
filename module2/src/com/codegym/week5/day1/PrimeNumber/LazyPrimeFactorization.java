@@ -10,7 +10,7 @@ public class LazyPrimeFactorization implements Runnable {
     }
 
     @Override
-    public void run() {
+    public synchronized void run() {
         try {
             int N = 2;
             int count = 0;
